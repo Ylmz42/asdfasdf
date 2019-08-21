@@ -59,16 +59,16 @@
                     </div>
                 </div>
 
-                <div id="load_checklist"></div>
-
             </div>
 
         </div>
     </div>
 </div>
+
 {% for item in table %}
-<script>myFunction({{item.0.id}})</script>
+<script>checkBoxChecked({{ item.0.id }})</script>
 {% endfor %}
+
 <script>
 
     $(document).ready(function () {
@@ -98,45 +98,49 @@
                 data: {
                     'checklist': checklist,
                     csrfmiddlewaretoken: $("input[name='csrfmiddlewaretoken']").val(),
-                    'application_id': 1,
+                    'application_id': {{ application.id }},
                 },
-                success: function (data) {
-                    // alert("Succesfull: " + data);
-                },
-                error: function (data) {
-                    // alert("Error: " + checklist);
-                },
+        success: function (data) {
+            // alert("Succesfull: " + data);
+        },
+        error: function (data) {
+            // alert("Error: " + checklist);
+        },
             });
         });
 
-        setInterval(function () {
+    setInterval(function () {
 
-            $.ajax({
+        $.ajax({
 
-                url: "/getChecklist/",
-                type: "GET",
-                dataType: "JSON",
-                data: {
-                    'checklist': checklist,
-                },
-                success: function (data) {
-                    for(var i = 0; i<(data.check).length; i++)
-                    {
-                      var checkBox = document.getElementById(i+1)
-                      if ((data.check)[i] == "1") {
-                          checkBox.checked = true;
-                      }
-                      else {
-                          checkBox.checked = false;
-                      }
-                    }
-                },
-                error: function (data) {
-                    // alert("Error: " + checklist);
-                },
-            });
+            url: "/getChecklist/",
+            type: "GET",
+            dataType: "JSON",
+            data: {
+                'application_id': {{ application.id }},
+            },
+        success: function (data) {
 
-        }, 5000);
+            for (var i = 0; i < (data.check).length; i++) {
+
+                var checkBox = document.getElementById(i + 1)
+
+                if ((data.check)[i] == "1") {
+                    checkBox.checked = true;
+                }
+                else {
+                    checkBox.checked = false;
+                }
+            }
+        },
+        error: function (data) {
+            // alert("Error: " + checklist);
+        },
+        });
+
+    }, 1000);
     });
+
 </script>
+
 {% endblock %}

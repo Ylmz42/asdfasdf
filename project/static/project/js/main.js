@@ -25,49 +25,41 @@ function bs_input_file() {
     );
 }
 //This function's for setting checkboxes status.
-function myFunction(item_id) {
+function checkBoxChecked(item_id) {
     var checkBox = document.getElementById(item_id);
-      if (checkBox.value == "1") {
-          checkBox.checked = true;
-      }
-      else {
-          checkBox.checked = false;
-      }
+    if (checkBox.value == "1") {
+        checkBox.checked = true;
+    }
+    else {
+        checkBox.checked = false;
+    }
+}
+
+function initial(per_list) {
+  for (var i = 0; i<per_list.length; i++) {
+    paragraph = document.getElementById(per_list[i][0]).innerHTML = per_list[i][1]*100+'%';
+  }
+}
+
+function isChecklistChecked(app_id) {
+
+    var checkBox = document.getElementsByClassName(app_id);
+    for (var i = 0; i < checkBox.length; i++) {
+        if (checkBox[i].value[i] == "1") {
+            checkBox[i].disabled = false;
+            if (checkBox[i].name[i] == "1") {
+                checkBox[i].checked = true;
+            }
+            else {
+                checkBox[i].checked = false;
+            }
+        }
+        else {
+            checkBox[i].disabled = true;
+        }
+    }
 }
 
 $(function () {
     bs_input_file();
 });
-
-/* function checkList(checkbox_id, application_id) {
-
-    $("#" + checkbox_id.toString()).change(function () {
-
-        var checklist = "";
-
-        $("input[type=checkbox]").each(function () {
-
-            if (this.checked == true) {
-                isChecked = "1";
-            }
-            else {
-                isChecked = "0";
-            }
-            checklist += isChecked;
-        });
-
-        $.ajax({
-            type: "POST",
-            url: "/checkbox_check/" + application_id + "/",
-            dataType: 'JSON',
-            data: {
-                'checklist': checklist,
-                csrfmiddlewaretoken: $("input[name='csrfmiddlewaretoken']").val()
-            },
-            success: function () {
-                alert("Succesfull:" + checklist + "\n");
-            }
-        });
-        console.log("Hello");
-    });
-} */

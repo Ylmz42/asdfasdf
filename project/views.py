@@ -48,7 +48,13 @@ def applications(request):
         projects = Project.objects.all()  # Getter all projects
         # Getter all applications that related with users who logged in
         applications = Application.usernameInApp(request)
-        return render(request, 'project/applications.html', {'projects': projects, 'applications': applications})
+        per_list = Application.stats(request)
+        context = {
+            'projects': projects,
+            'applications': applications,
+            'per_list': per_list
+        }
+        return render(request, 'project/applications.html', context)
 
 # This is register page
 
@@ -251,7 +257,8 @@ def setChecklist(request):
 
 def getChecklist(request):
 
-    application = Application.objects.filter(id=1)
+    app_id = request.GET.get("application_id")
+    application = Application.objects.filter(id=app_id)
     check = ""
 
     for app in application:
