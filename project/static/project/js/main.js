@@ -26,22 +26,20 @@ function bs_input_file() {
 }
 //This function's for setting checkboxes status.
 function myFunction(item_id) {
-    var checkBox = document.getElementsByName(item_id);
-    for (var i = 0; i < checkBox.length; i++) {
-        if (checkBox[i].value[i] == "1") {
-            checkBox[i].checked = true;
-        }
-        else {
-            checkBox[i].checked = false;
-        }
-    }
+    var checkBox = document.getElementById(item_id);
+      if (checkBox.value == "1") {
+          checkBox.checked = true;
+      }
+      else {
+          checkBox.checked = false;
+      }
 }
 
 $(function () {
     bs_input_file();
 });
 
-function checkList(checkbox_id, application_id) {
+/* function checkList(checkbox_id, application_id) {
 
     $("#" + checkbox_id.toString()).change(function () {
 
@@ -72,39 +70,4 @@ function checkList(checkbox_id, application_id) {
         });
         console.log("Hello");
     });
-}
-function report(app_id) {
-    var checkBox = document.getElementsByClassName(app_id);
-    for (var i = 0; i < checkBox.length; i++) {
-        if (checkBox[i].value[i] == "1") {
-            checkBox[i].disabled = false;
-            if (checkBox[i].name[i] == "1") {
-                checkBox[i].checked = true;
-            }
-            else {
-                checkBox[i].checked = false;
-            }
-        }
-        else {
-            checkBox[i].disabled = true;
-        }
-    }
-}
-/*function report(application_id) {
-  $("#application_id").change(function () {
-
-    $.ajax({
-      url: '/ajax/validate_username/',
-      data: {
-        'username': username
-      },
-      dataType: 'json',
-      success: function (data) {
-        if (data.is_taken) {
-          alert("A user with this username already exists.");
-        }
-      }
-    });
-
-  });
-}*/
+} */

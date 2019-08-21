@@ -1,11 +1,10 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from .forms import ProjectForm, ApplicationForm, UserForm
 from .models import Project, Application, CheckList
-import sqlite3
 # Create your views here.
 
 # This is home page. When user logs in, the page that will be seen
@@ -154,16 +153,14 @@ def report(request, project_id):
 
         applicationLength = len(list(applications))
         table = []
-        reports = []
 
         for i in range(applicationLength):
-            checkboxLength = len(list(applications[i].checklist))
+            checkboxLength = len(list(checklists))
             for j in range(checkboxLength):
                 table.append([list(checklists)[j], list(
                     applications[i].checklist)[j]])
-        for k in applications:
-            reports.append(k.checklist);
-        return render(request, 'project/report.html', {'project': project, 'applications': applications, 'checklists': checklists, 'table': table, 'reports': reports})
+
+        return render(request, 'project/report.html', {'project': project, 'applications': applications, 'checklists': checklists, 'table': table})
 
 #This is for creating projects.
 
@@ -242,22 +239,41 @@ def delete_application(request, project_id, application_id):
 #This is for updating database when any of checkbox has changed.
 
 
-def checkbox_check(request, application_id):
+def setChecklist(request):
 
-    if request.method == 'POST':
-        checklist = request.POST['checklist']
+    checklist = request.POST['checklist']
+    application_id = request.POST['application_id']
 
-        application = get_object_or_404(Application, pk=application_id)
-        application.checklist = checklist
+    Application.objects.filter(id=application_id).update(checklist=checklist)
 
-        print(checklist)
+    return HttpResponse('')
 
-        conn = sqlite3.connect('db.sqlite3')
-        c = conn.cursor()
-        c.execute("UPDATE project_application SET checklist = ? WHERE id = ?",
-                  (checklist, application_id))
-        conn.commit()
-        c.close()
-        conn.close()
 
-        return HttpResponse('')
+def getChecklist(request):
+
+    application = Application.objects.filter(id=1)
+    check = ""
+
+    for app in application:
+        check += app.checklist
+
+    data = {
+        'check': check
+    }
+
+    return JsonResponse(data)
+
+
+def setReportlist(request):
+
+    reportlist = request.POST['reportlist']
+    application_id = request.POST['application_id']
+
+    Application.objects.filter(id=application_id).update(reportlist=reportlist)
+
+    return HttpResponse('')
+
+
+def getReportlist(request):
+
+    return HttpResponse('')
