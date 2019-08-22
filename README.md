@@ -48,7 +48,7 @@ mojombo/github-flavored-markdown#1
  Python 3.6.8
 
 # III. Installation
-  * Open console in app's location and type: 
+  * Open console in app's location and type :
     * $ pip3 -r install requirements.txt
 
 # IV. Usage
