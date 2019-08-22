@@ -37,7 +37,13 @@ mojombo/github-flavored-markdown#1
 ## Setup
   .....
 ## Usage
-  .....
+  * Creating Users
+    * This is how we create users.
+  * Adding Projects
+    * First of all you need to create projects.
+  * Adding Applications
+    * Come under the Project where you will create an application then press the __Create Application__ button.
+  * Checklists
 ## Important Notes
   .....
 ## ScreenShots
