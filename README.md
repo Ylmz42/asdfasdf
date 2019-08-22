@@ -31,15 +31,15 @@ mojombo/github-flavored-markdown#1
 
 ~~this~~
 
-# Django-Application//Define
+# I. Django-Application//Define
  Django application is application monitoring web site. You can add projects, applications, users and so on. Besides you can delete and change them too. We used Django, CSS, Python, JS, AJAX and HTML on our website.
 
-## Requirements
+## II. Requirements
  ...
 
-## Setup
+## III. Setup
   .....
-## Usage
+## IV. Usage
   * Creating Users
     * You can create users from register form.
   * Creating Projects
