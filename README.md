@@ -48,6 +48,7 @@ mojombo/github-flavored-markdown#1
     * First of all you need to create projects. Then you can create applications for projects from **Create Application** form.
   * Checklists
 ## Important Notes
-  * When you creating applications at the user thing **don't use** spaces.
+  * When you creating applications, at the user thing **don't use** spaces.
+  * 
 ## ScreenShots
   .....
