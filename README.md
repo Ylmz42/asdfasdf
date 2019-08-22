@@ -1,6 +1,16 @@
 # Django_Application
 
 Buraya güzel bir Readme dosyası da hazırlmayı unutmayın. Uygulamadan ekran görüntüleri de koyabilirsiniz. İngilizce yazarsanız daha iyi olur.
+
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)
+
+1. Item 1
+1. Item 2
+1. Item 3
+   1. Item 3a
+   1. Item 3b
+
 **You can combine them**
 * Item 1
 * Item 2
