@@ -41,33 +41,7 @@ mojombo/github-flavored-markdown#1
 
 ~~this~~
 
-# I. Django-Application//Define
- Django application is application monitoring web site. You can add projects, applications, users and so on. Besides you can delete and change them too. We used Django, CSS, Python, JS, AJAX and HTML on our website.
-
-# II. Requirements
- Python 3.6.8
-
-# III. Installation
-  * Open console in app's location and type :
-    * $ pip3 -r install requirements.txt
-
-# IV. Usage
-  * Creating Users
-    * You can create users from register form.
-  * Creating Projects
-    * You can create projects from **Create Project** form.
-  * Creating Applications
-    * First of all you need to create projects. Then you can create applications for projects from **Create Application** form.
-  * Checklists
-
-# V. Important Notes
-  * When you creating applications, at the user thing **don't use** spaces.
-  * 
-
-# VI. ScreenShots
-  .....
-  
-  # Django File Upload Tutorial
+ # I. Django File Upload Tutorial
 
 [![Python Version](https://img.shields.io/badge/python-3.7-brightgreen.svg)](https://python.org)
 [![Django Version](https://img.shields.io/badge/django-2.1-brightgreen.svg)](https://djangoproject.com)
@@ -106,6 +80,31 @@ python manage.py runserver
 
 The project will be available at **127.0.0.1:8000**.
 
+# II. Django-Application//Define
+ Django application is application monitoring web site. You can add projects, applications, users and so on. Besides you can delete and change them too. We used Django, CSS, Python, JS, AJAX and HTML on our website.
+
+# III. Requirements
+ Python 3.6.8
+
+# IV. Installation
+  * Open console in app's location and type :
+    * $ pip3 -r install requirements.txt
+
+# V. Usage
+  * Creating Users
+    * You can create users from register form.
+  * Creating Projects
+    * You can create projects from **Create Project** form.
+  * Creating Applications
+    * First of all you need to create projects. Then you can create applications for projects from **Create Application** form.
+  * Checklists
+
+# VI. Important Notes
+  * When you creating applications, at the user thing **don't use** spaces.
+  * 
+
+# VII. ScreenShots
+  .....
 
 ## License
 
