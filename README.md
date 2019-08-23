@@ -6,10 +6,6 @@
 [![Python Version](https://img.shields.io/badge/python-3.7-brightgreen.svg)](https://python.org)
 [![Django Version](https://img.shields.io/badge/django-2.1-brightgreen.svg)](https://djangoproject.com)
 
-Code example used in the tutorial series on Django File Upload.
-
-Watch it on YouTube: [Django 2.1 File Upload](https://www.youtube.com/playlist?list=PLLxk3TkuAYnpm24Ma1XenNeq1oxxRcYFT)
-
 ## Running the Project Locally
 
 First, clone the repository to your local machine:
@@ -49,10 +45,11 @@ The project will be available at **127.0.0.1:8000**.
   * Creating Applications
     * First of all you need to create projects. Then you can create applications for projects from **Create Application** form.
   * Checklists
+    * .xlsx i guess.
 
 # V. Important Notes
   * When you creating applications, at the user thing **don't use** spaces.
-  * 
+  * You can't change checkboxes after you upload them. Or can you?
 
 # VI. ScreenShots
   .....
