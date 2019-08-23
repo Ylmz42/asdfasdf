@@ -1,47 +1,7 @@
-# Django_Application
-
-Buraya güzel bir Readme dosyası da hazırlmayı unutmayın. Uygulamadan ekran görüntüleri de koyabilirsiniz. İngilizce yazarsanız daha iyi olur.
-
-![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](url)
-
-1. Item 1
-1. Item 2
-1. Item 3
-   1. Item 3a
-   1. Item 3b
-
-**You can combine them**
-* Item 1
-* Item 2
-  * Item 2a
-  * Item 2b
-
-As Kanye West said:
-
-> We're living the future so
-> the present is our past.  
-
-I think you should use an
-`<addr>` element here instead.
-
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
-
-First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
-
-#1
-mojombo#1
-mojombo/github-flavored-markdown#1
-
-~~this~~
-
- # I. Django File Upload Tutorial
+# I. Django-Application
+ Django application is application monitoring web site. You can add projects, applications, users and so on. Besides you can delete and change them too. We used Django, CSS, Python, JS, AJAX and HTML on our website.
+ 
+# II. Django File Upload Tutorial
 
 [![Python Version](https://img.shields.io/badge/python-3.7-brightgreen.svg)](https://python.org)
 [![Django Version](https://img.shields.io/badge/django-2.1-brightgreen.svg)](https://djangoproject.com)
@@ -78,17 +38,10 @@ python manage.py runserver
 
 The project will be available at **127.0.0.1:8000**.
 
-# II. Django-Application//Define
- Django application is application monitoring web site. You can add projects, applications, users and so on. Besides you can delete and change them too. We used Django, CSS, Python, JS, AJAX and HTML on our website.
-
 # III. Requirements
  Python 3.6.8
 
-# IV. Installation
-  * Open console in app's location and type :
-    * $ pip3 -r install requirements.txt
-
-# V. Usage
+# IV. Usage
   * Creating Users
     * You can create users from register form.
   * Creating Projects
@@ -97,13 +50,13 @@ The project will be available at **127.0.0.1:8000**.
     * First of all you need to create projects. Then you can create applications for projects from **Create Application** form.
   * Checklists
 
-# VI. Important Notes
+# V. Important Notes
   * When you creating applications, at the user thing **don't use** spaces.
   * 
 
-# VII. ScreenShots
+# VI. ScreenShots
   .....
 
-## License
+# VII. License
 
 The source code is released under the [MIT License](https://github.com/sibtc/django-upload-example/blob/master/LICENSE).
