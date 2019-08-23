@@ -48,7 +48,6 @@ class Application(models.Model):
             percentage_list.append([app.id, percentage])
         return percentage_list
 
-
 class CheckList(models.Model):
 
     name = models.CharField(max_length=100)

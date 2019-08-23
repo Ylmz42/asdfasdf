@@ -142,7 +142,7 @@ def application_detail(request, project_id, application_id):
         table = []
 
         for i in range(checkboxLength):
-            table.append([list(checklists)[i], list(application.checklist)[i]])
+            table.append([list(checklists)[i], list(application.checklist)[i], list(application.reported)[i]])
 
         return render(request, 'project/application_detail.html', {'project': project, 'application': application, 'checklists': checklists, 'checkboxLength': checkboxLength, 'table': table})
 
@@ -251,21 +251,23 @@ def setChecklist(request):
     application_id = request.POST['application_id']
 
     Application.objects.filter(id=application_id).update(checklist=checklist)
-
     return HttpResponse('')
 
 
 def getChecklist(request):
 
-    app_id = request.GET.get("application_id")
-    application = Application.objects.filter(id=app_id)
+    application_id = request.GET.get("application_id")
+    application = Application.objects.filter(id=application_id)
     check = ""
+    report =""
 
     for app in application:
         check += app.checklist
+        report += app.reported
 
     data = {
-        'check': check
+        'check': check,
+        'report': report,
     }
 
     return JsonResponse(data)
@@ -274,13 +276,52 @@ def getChecklist(request):
 def setReportlist(request):
 
     reportlist = request.POST['reportlist']
-    application_id = request.POST['application_id']
+    project_id = request.POST['project_id']
 
-    Application.objects.filter(id=application_id).update(reportlist=reportlist)
+    applications = Application.objects.filter(project_id=project_id)
+    checklists = CheckList.objects.all()
+
+    reported = []
+
+    for i in range(len(applications)):
+        report = ""
+        for j in range(len(checklists)):
+            report += reportlist[i + (len(applications) * j)]
+        reported.append(report)
+
+    print(reported)
+
+    count = 0
+    for app in applications:
+        Application.objects.filter(id=app.id).update(reported=reported[count])
+        count += 1
 
     return HttpResponse('')
 
 
 def getReportlist(request):
 
-    return HttpResponse('')
+    project_id = request.GET.get("project_id")
+    applications = Application.objects.filter(project_id=project_id)
+    checklists = CheckList.objects.all()
+
+    report = ""
+    check = ""
+    application_id = []
+    appLength = len(applications)
+    checklistLength = len(checklists)
+
+    for app in applications:
+        report += app.reported
+        check += app.checklist
+        application_id.append(app.id)
+
+    data = {
+        'check': check,
+        'report': report,
+        'appLength': appLength,
+        'checklistLength': checklistLength,
+        'application_id': application_id,
+    }
+
+    return JsonResponse(data)

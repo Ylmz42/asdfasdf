@@ -26,7 +26,9 @@ function bs_input_file() {
 }
 //This function's for setting checkboxes status.
 function checkBoxChecked(item_id) {
+
     var checkBox = document.getElementById(item_id);
+
     if (checkBox.value == "1") {
         checkBox.checked = true;
     }
@@ -44,9 +46,12 @@ function initial(per_list) {
 function isChecklistChecked(app_id) {
 
     var checkBox = document.getElementsByClassName(app_id);
+
     for (var i = 0; i < checkBox.length; i++) {
+
         if (checkBox[i].value[i] == "1") {
             checkBox[i].disabled = false;
+
             if (checkBox[i].name[i] == "1") {
                 checkBox[i].checked = true;
             }
