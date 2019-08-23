@@ -50,6 +50,7 @@ The project will be available at **127.0.0.1:8000**.
 # V. Important Notes
   * When you creating applications, at the user thing **don't use** spaces.
   * You can't change checkboxes after you upload them. Or can you?
+  * You can't uncheck checklist if it's already reported. You need to uncheck reported part first.
 
 # VI. ScreenShots
   .....
